@@ -16,8 +16,8 @@ const CONFIG = {
       href: "https://github.com/zanzanbari/wal-backend",
     },
     {
-      name: `필린`,
-      href: "https://github.com/TeamFILL-IN/server-renew",
+      name: `졸업 프로젝트`,
+      href: "https://github.com/Earth-Breakers/namu-backend",
     },
     
   ],
@@ -40,13 +40,13 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: false,
+    enable: true,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
-    enable: false,
+    enable: true,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
