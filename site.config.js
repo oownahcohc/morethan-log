@@ -12,14 +12,17 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `왈`,
-      href: "https://github.com/zanzanbari/wal-backend",
-    },
-    {
       name: `졸업 프로젝트`,
       href: "https://github.com/Earth-Breakers/namu-backend",
     },
-    
+    {
+      name: `코팡`,
+      href: "https://github.com/kodesalon/kopang",
+    },
+    {
+      name: `바로`,
+      href: "https://github.com/ogongchill/barlow",
+    },
   ],
   // blog setting (required)
   blog: {
