@@ -10,8 +10,11 @@ import { TPosts } from "src/types"
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
 
-// TODO: react query를 사용해서 처음 불러온 뒤로는 해당데이터만 사용하도록 수정
+// 빌드 시 getStaticProps가 페이지마다 getPosts()를 호출하는 중복 API 호출 방지
+let cachedPosts: TPosts | null = null
+
 export const getPosts = async () => {
+  if (cachedPosts) return cachedPosts
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
 
@@ -55,6 +58,7 @@ export const getPosts = async () => {
     })
 
     const posts = data as TPosts
+    cachedPosts = posts
     return posts
   }
 }
