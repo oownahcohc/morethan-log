@@ -1,6 +1,7 @@
 import NavBar from "./NavBar"
 import Logo from "./Logo"
 import ThemeToggle from "./ThemeToggle"
+import ReadProgressBar from "./ReadProgressBar"
 import styled from "@emotion/styled"
 import { zIndexes } from "src/styles/zIndexes"
 
@@ -18,6 +19,7 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
           <NavBar />
         </div>
       </div>
+      <ReadProgressBar />
     </StyledWrapper>
   )
 }
@@ -29,6 +31,7 @@ const StyledWrapper = styled.div`
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.colors.gray2};
+  backdrop-filter: blur(8px);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
   .container {
