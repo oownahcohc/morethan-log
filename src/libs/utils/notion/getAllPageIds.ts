@@ -16,9 +16,12 @@ export default function getAllPageIds(
     const pageSet = new Set<ID>()
     // * type not exist
     Object.values(views).forEach((view: any) => {
+      // grouped views (Board, Grouped Gallery) store ids in collection_group_results
       view?.collection_group_results?.blockIds?.forEach((id: ID) =>
         pageSet.add(id)
       )
+      // ungrouped views (Table, Gallery, List) store ids directly in blockIds
+      view?.blockIds?.forEach((id: ID) => pageSet.add(id))
     })
     pageIds = [...pageSet]
   }
